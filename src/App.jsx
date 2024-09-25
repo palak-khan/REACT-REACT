@@ -1,18 +1,32 @@
+// import { useState } from "react";
+
+// const App = () => {
+//   const [time, settime] = useState(new Date().toLocaleTimeString());
+//   setInterval(() => {
+//     settime(new Date().toLocaleTimeString());
+//   }, 1000);
+//   return (
+//     <div>
+//       <h1>{time}</h1>
+//     </div>
+//   );
+// };
+
+// export default App;
+
 const App = () => {
-  let data = "data from server";
-  let subject = ["maths", "hindi"];
-  let profile = {
-    name: "palak",
-    age: "18",
-    email: "palak@.com",
+  const SubmitHandler = (e) => {
+    e.preventDefault();
+    console.log(e.target.username.value)
+    console.log("Done");
   };
+
   return (
     <div>
-      <h1>{data}</h1>
-      <h1>{subject}</h1>
-      <h1>{profile.name}</h1>
-      <h1>{profile.age}</h1>
-      <h1>{profile.email}</h1>
+      <form onSubmit={SubmitHandler}>
+        <input name="username" placeholder="Username" type="text" />
+        <button>Submit</button>
+      </form>
     </div>
   );
 };
