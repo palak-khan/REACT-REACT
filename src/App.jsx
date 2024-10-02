@@ -1,79 +1,17 @@
+import Child1 from "./components/Child1";
+import Child2 from "./components/Child2";
 
-// const App = () => {
-//   const SubmitHandler = (e) => {
-//     e.preventDefault();
-
-//     const formData = {
-//       firstname: e.target.firstname.value,
-//       lastname: e.target.lastname.value,
-//       username: e.target.username.value,
-//       email: e.target.email.value,
-//       contact: e.target.contact.value,
-//     };
-//     console.log(formData);
-//   };
-
-//   return (
-//     <div>
-//       <form onSubmit={SubmitHandler}>
-//         <input
-//           autoComplete="off"
-//           name="firstname"
-//           placeholder="Firstname"
-//           type="text"
-//         />
-//         <input
-//           autoComplete="off"
-//           name="lastname"
-//           placeholder="Lastname"
-//           type="text"
-//         />
-//         <input
-//           autoComplete="off"
-//           name="username"
-//           placeholder="Username"
-//           type="text"
-//         />
-//         <input
-//           autoComplete="off"
-//           name="email"
-//           placeholder="Email"
-//           type="email"
-//         />
-//         <input
-//           autoComplete="off"
-//           name="contact"
-//           placeholder="Contact"
-//           type="contact"
-//         />
-//         <button type="submit">Submit</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default App;
-
-
-import { useState } from "react";
 const App = () => {
-  const [username, setusername] = useState("");
-  const submitHandler = (e) => {
-    e.preventDefault();
-    console.log(username);
-  };
   return (
     <div>
-      <form action="" onSubmit={submitHandler}>
-        <input
-          type="text"
-          placeholder="username"
-          name="username"
-          onChange={(e) => setusername(e.target.value)}
-          value={username}
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <h1>hello</h1>
+      <Child1 title="Hey its Child1 here!" />
+      <hr />
+
+      <Child2 title="secret">
+        <h1>Hey its child2 here!</h1>
+        <p>Child2 is smart</p>
+      </Child2>
     </div>
   );
 };
